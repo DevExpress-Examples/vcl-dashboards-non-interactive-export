@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Dashboard RequestParameters="false">
+  <Title Text="Country Sales" />
+  <DataSources>
+    <SqlDataSource Name="SQL Data Source" ComponentName="sqlDataSource1">
+      <Connection Name="NWindConnectionString" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Invoices">
+        <Parameter Name="CountryFilter" Type="DevExpress.DataAccess.Expression">(System.String)(?CountryDashboardParameter )</Parameter>
+        <Tables>
+          <Table Name="Invoices" />
+        </Tables>
+        <Columns>
+          <AllColumns Table="Invoices" />
+        </Columns>
+        <Filter>[Invoices.Country] = ?CountryFilter</Filter>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="Price" Expression="ToDouble( [ExtendedPrice] ) " DataType="Auto" DataMember="Invoices" />
+        <CalculatedField Name="Calculated Field 1" Expression="ToDouble( [Invoices.ExtendedPrice] ) " DataType="Auto" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="CountryDashboardParameter" Value="France" Visible="false" />
+  </Parameters>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" ShowCaption="false" DataSource="sqlDataSource1" DataMember="Invoices">
+      <DataItems>
+        <Dimension DataMember="OrderDate" DateTimeGroupInterval="MonthYear" DefaultId="DataItem1" />
+        <Measure DataMember="Price" DefaultId="DataItem0">
+          <NumericFormat FormatType="Currency" />
+        </Measure>
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem1" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple SeriesType="Spline">
+              <Value DefaultId="DataItem0" />
+              <PointLabelOptions ContentType="Value" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Card ComponentName="cardDashboardItem1" Name="Card 1" ShowCaption="false" DataSource="sqlDataSource1" DataMember="Invoices">
+      <DataItems>
+        <Measure DataMember="ExtendedPrice" DefaultId="DataItem0" />
+        <Dimension DataMember="CustomerName" DefaultId="DataItem1" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem1" />
+      </SeriesDimensions>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate Type="Stretched">
+          <TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <BottomValue1 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
+          <BottomValue2 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
+          <DeltaIndicator Visible="true" />
+          <Sparkline Visible="true" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" ShowCaption="false" DataSource="sqlDataSource1" DataMember="Invoices">
+      <DataItems>
+        <Dimension DataMember="Address" DefaultId="DataItem0" />
+        <Dimension DataMember="City" DefaultId="DataItem1" />
+        <Measure DataMember="Price" DefaultId="DataItem2">
+          <NumericFormat FormatType="Currency" />
+        </Measure>
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem2" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+      <ColumnFilterOptions />
+    </Grid>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup Orientation="Vertical">
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="124.4155844155844" />
+        <LayoutGroup Weight="75.5844155844156">
+          <LayoutItem DashboardItem="cardDashboardItem1" Weight="68.47030288908363" />
+          <LayoutItem DashboardItem="gridDashboardItem1" Weight="131.52969711091637" />
+        </LayoutGroup>
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
