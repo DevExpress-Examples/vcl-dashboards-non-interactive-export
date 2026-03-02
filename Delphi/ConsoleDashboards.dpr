@@ -36,10 +36,9 @@ begin
       AConnection.Active := True;
 
       // Step 3: Define Dashboard Parameter Values
-      ADashboard.LoadParametersFromDashboard;
+      ADashboard.Parameters.LoadFromLayout;
       // Set the "CountryDashboardParameter" value in the dashboard layout
       ADashboard.Parameters['CountryDashboardParameter'].Value := ACountryName;
-      ADashboard.ApplyParametersToState;
 
       // Step 4: Export the dashboard to PDF
       AStream := TMemoryStream.Create;
