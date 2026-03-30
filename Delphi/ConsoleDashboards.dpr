@@ -36,7 +36,6 @@ begin
       AConnection.Active := True;
 
       // Step 3: Define Dashboard Parameter Values
-      ADashboard.Parameters.LoadFromLayout;
       // Set the "CountryDashboardParameter" value in the dashboard layout
       ADashboard.Parameters['CountryDashboardParameter'].Value := ACountryName;
 
