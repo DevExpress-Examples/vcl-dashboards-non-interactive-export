@@ -178,9 +178,11 @@ end;
 -   [nwind.db] contains the Northwind sample database.
 
 
+<!-- in-repository links -->
 [ConsoleDashboards.dpr]: ./Delphi/ConsoleDashboards.dpr
 [CountrySalesDashboard.xml]: ./Delphi/CountrySalesDashboard.xml
 [nwind.db]: ./Delphi/nwind.db
+
 
 ## Documentation
 
@@ -188,29 +190,35 @@ end;
 -   [Tutorial: Create a dashboard using the Designer Dialog](https://docs.devexpress.com/VCL/405774/ExpressDashboards/getting-started/create-dashboard-using-designer-dialog)
 -   [Use SQLite as a data source for dashboards (as demonstrated in the current example)](https://docs.devexpress.com/VCL/405750/ExpressCrossPlatformLibrary/vcl-backend/database-engines/vcl-backend-sqlite-support)
 -   API reference:
-    -   [TdxDashboard](https://docs.devexpress.com/VCL/dxDashboard.TdxDashboard)
+    -   [TdxDashboard]
     -   [TdxDashboard.ExportTo]
-    -   [TdxDashboard.Layout](https://docs.devexpress.com/VCL/dxDashboard.TdxDashboard.Layout)
+    -   [TdxDashboard.Layout]
     -   [TdxDashboard.Parameters]
     -   [TdxDashboard.Parameters.LoadFromLayout]
-    -   [TdxBackendDatabaseSQLConnection](https://docs.devexpress.com/VCL/dxBackend.ConnectionString.SQL.TdxBackendDatabaseSQLConnection)
+    -   [TdxBackendDatabaseSQLConnection]
 
 
+<!-- documentation links -->
 [designer]: https://docs.devexpress.com/VCL/405774/ExpressDashboards/getting-started/create-dashboard-using-designer-dialog
 [supported-dbms]: https://docs.devexpress.com/VCL/405703/ExpressCrossPlatformLibrary/vcl-backend/vcl-backend-supported-database-systems
+
+<!-- reference links -->
+[TdxDashboard]: https://docs.devexpress.com/VCL/dxDashboard.TdxDashboard
 [TdxDashboard.ExportTo]: https://docs.devexpress.com/VCL/dxDashboard.TdxDashboard.ExportTo(dxBackend.TdxDashboardExportFormat-System.Classes.TStream)#available-export-formats
+[TdxDashboard.Layout]: https://docs.devexpress.com/VCL/dxDashboard.TdxDashboard.Layout
 [TdxDashboard.Parameters]: https://docs.devexpress.com/VCL/dxDashboard.TdxDashboard.Parameters
 [TdxDashboard.Parameters.LoadFromLayout]: https://docs.devexpress.com/VCL/dxDashboard.Parameters.TdxDashboardParameters.LoadFromLayout
+[TdxBackendDatabaseSQLConnection]: https://docs.devexpress.com/VCL/dxBackend.ConnectionString.SQL.TdxBackendDatabaseSQLConnection
 
 ## More Examples
 
 -   [Pass Hidden Parameters to a SQL Query][hidden-parameter-example]
+-   [Store Layouts in a Database][database-example]
 -   [Store Layouts in XML Files (DevExpress Reports for Delphi/C++Builder)][file-example]
--   [Store Layouts in a Database (DevExpress Reports for Delphi/C++Builder)][database-example]
 
 [hidden-parameter-example]: https://github.com/DevExpress-Examples/vcl-dashboards-pass-hidden-parameters-to-custom-sql-query
 [file-example]: https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-file
-[database-example]: https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-database
+[database-example]: https://github.com/DevExpress-Examples/vcl-dashboards-store-layout-template-database
 
 <!-- feedback -->
 ## Does This Example Address Your Development Requirements/Objectives?
