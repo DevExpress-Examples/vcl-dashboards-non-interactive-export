@@ -110,12 +110,10 @@ Parameters allow you to modify database queries and generate different dashboard
 based on the same dashboard template and underlying data.
 For example, [CountrySalesDashboard.xml] includes a single `CountryDashboardParameter` that filters data by country name.
 
-To modify parameters, load them using the [TdxDashboard.Parameters.LoadFromLayout] method
-and assign values to [TdxDashboard.Parameters] list members as follows:
+To modify parameters assign values to [TdxDashboard.Parameters] list members as follows:
 
 **Delphi:**
 ```delphi
-ADashboard.Parameters.LoadFromLayout;
 // Set the "CountryDashboardParameter" value in the dashboard layout
 ADashboard.Parameters['CountryDashboardParameter'].Value := ACountryName;
 ```
@@ -152,8 +150,6 @@ and repeat steps 3 and 4 for each parameter.
 **Delphi:**
 ```delphi
 // ...
-ADashboard.LoadParametersFromDashboard;
-
 for ACountryName in ACountryNameList:
     ADashboard.Parameters['CountryDashboardParameter'].Value := ACountryName;
 
@@ -194,7 +190,6 @@ end;
     -   [TdxDashboard.ExportTo]
     -   [TdxDashboard.Layout]
     -   [TdxDashboard.Parameters]
-    -   [TdxDashboard.Parameters.LoadFromLayout]
     -   [TdxBackendDatabaseSQLConnection]
 
 
@@ -207,7 +202,6 @@ end;
 [TdxDashboard.ExportTo]: https://docs.devexpress.com/VCL/dxDashboard.TdxDashboard.ExportTo(dxBackend.TdxDashboardExportFormat-System.Classes.TStream)#available-export-formats
 [TdxDashboard.Layout]: https://docs.devexpress.com/VCL/dxDashboard.TdxDashboard.Layout
 [TdxDashboard.Parameters]: https://docs.devexpress.com/VCL/dxDashboard.TdxDashboard.Parameters
-[TdxDashboard.Parameters.LoadFromLayout]: https://docs.devexpress.com/VCL/dxDashboard.Parameters.TdxDashboardParameters.LoadFromLayout
 [TdxBackendDatabaseSQLConnection]: https://docs.devexpress.com/VCL/dxBackend.ConnectionString.SQL.TdxBackendDatabaseSQLConnection
 
 ## More Examples
