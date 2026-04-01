@@ -182,9 +182,9 @@ end;
 
 ## Documentation
 
--   [Introduction to VCL Dashboards](https://docs.devexpress.com/VCL/405642/ExpressDashboards/vcl-dashboards)
--   [Tutorial: Create a dashboard using the Designer Dialog](https://docs.devexpress.com/VCL/405774/ExpressDashboards/getting-started/create-dashboard-using-designer-dialog)
--   [Use SQLite as a data source for dashboards (as demonstrated in the current example)](https://docs.devexpress.com/VCL/405750/ExpressCrossPlatformLibrary/vcl-backend/database-engines/vcl-backend-sqlite-support)
+-   [Introduction to VCL Dashboards][dashboards-intro]
+-   [Tutorial: Create a dashboard using the Designer Dialog][designer]
+-   [Use SQLite as a data source for dashboards (as demonstrated in the current example)][sqlite-data-source]
 -   API reference:
     -   [TdxDashboard]
     -   [TdxDashboard.ExportTo]
@@ -194,8 +194,10 @@ end;
 
 
 <!-- documentation links -->
+[dashboards-intro]: https://docs.devexpress.com/VCL/405642/ExpressDashboards/vcl-dashboards
 [designer]: https://docs.devexpress.com/VCL/405774/ExpressDashboards/getting-started/create-dashboard-using-designer-dialog
 [supported-dbms]: https://docs.devexpress.com/VCL/405703/ExpressCrossPlatformLibrary/vcl-backend/vcl-backend-supported-database-systems
+[sqlite-data-source]: https://docs.devexpress.com/VCL/405750/ExpressCrossPlatformLibrary/vcl-backend/database-engines/vcl-backend-sqlite-support
 
 <!-- reference links -->
 [TdxDashboard]: https://docs.devexpress.com/VCL/dxDashboard.TdxDashboard
@@ -210,6 +212,7 @@ end;
 -   [Store Layouts in a Database][database-example]
 -   [Store Layouts in XML Files (DevExpress Reports for Delphi/C++Builder)][file-example]
 
+<!-- example links -->
 [hidden-parameter-example]: https://github.com/DevExpress-Examples/vcl-dashboards-pass-hidden-parameters-to-custom-sql-query
 [file-example]: https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-file
 [database-example]: https://github.com/DevExpress-Examples/vcl-dashboards-store-layout-template-database
