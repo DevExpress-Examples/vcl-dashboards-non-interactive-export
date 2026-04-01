@@ -65,7 +65,9 @@ You can [import a layout from a file][file-example] or [load a layout from a dat
 
 This example imports a dashboard layout from the [CountrySalesDashboard.xml] file.
 
-**Delphi:**
+<!-- start-code-block -->
+#### Delphi
+
 ```delphi
 ADashboard := TdxDashboard.Create(nil); // ADashboard: TdxDashboard;
 try
@@ -78,12 +80,16 @@ finally
     ADashboard.Free;
 end;
 ```
+<!-- end-code-block -->
 
 
 ### Step 2: Create a Database Connection
 
 Create a database connection component to supply data to the dashboard.
 This example uses a SQLite sample database ([nwind.db]).
+
+<!-- start-code-block -->
+#### Delphi
 
 ```delphi
 // AConnection: TdxBackendDatabaseSQLConnection;
@@ -98,6 +104,7 @@ finally
     AConnection.Free;
 end;
 ```
+<!-- end-code-block -->
 
 For detailed information on data source management and supported database engines, refer to the following help topic:
 [VCL Backend: Supported Database Systems][supported-dbms].
@@ -112,18 +119,23 @@ For example, [CountrySalesDashboard.xml] includes a single `CountryDashboardPara
 
 To modify parameters assign values to [TdxDashboard.Parameters] list members as follows:
 
-**Delphi:**
+<!-- start-code-block -->
+#### Delphi
+
 ```delphi
 // Set the "CountryDashboardParameter" value in the dashboard layout
 ADashboard.Parameters['CountryDashboardParameter'].Value := ACountryName;
 ```
+<!-- end-code-block -->
 
 
 ### Step 4: Export Dashboard Content to a File
 
 This example exports a dashboard to a PDF file using the [TdxDashboard.ExportTo] method:
 
-**Delphi:**
+<!-- start-code-block -->
+#### Delphi
+
 ```delphi
 AStream := TMemoryStream.Create; // AStream: TMemoryStream;
 try
@@ -135,6 +147,7 @@ finally
     AStream.Free;
 end;
 ```
+<!-- end-code-block -->
 
 For detailed information on available export formats, refer to the following help topic:
 [TdxDashboard.ExportTo].
@@ -147,7 +160,9 @@ using a list of parameters.
 You need to initialize the dashboard layout and data connection once (steps 1 and 2)
 and repeat steps 3 and 4 for each parameter.
 
-**Delphi:**
+<!-- start-code-block -->
+#### Delphi
+
 ```delphi
 // ...
 for ACountryName in ACountryNameList:
@@ -164,7 +179,7 @@ for ACountryName in ACountryNameList:
     end;
 end;
 ```
-
+<!-- end-code-block -->
 
 ## Files to Review
 
@@ -224,3 +239,4 @@ end;
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
