@@ -5,35 +5,33 @@ program ConsoleDashboards;
 {$R *.res}
 
 uses
-  System.SysUtils, System.Classes, dxBackend, dxBackend.Bundled,
-  dxBackend.ConnectionString.SQL, dxDashboard;
+  System.SysUtils, System.Classes,
+  dxBackend, dxBackend.ConnectionString.SQL, dxDashboard;
+
 var
   ACountryName: string;
 
 procedure ExportDashboardToPdf(const ACountryName: string);
 var
-  AManager: TdxBackendDataConnectionManager;
   AConnection: TdxBackendDatabaseSQLConnection;
   ADashboard: TdxDashboard;
   AStream: TMemoryStream;
   AOutputFileName: string;
 begin
-  // Step 1: Create a dashboard instance and load the dashboard layout
-  ADashboard := TdxDashboard.Create(nil);
+  // Step 1: Create and set up the database connection
+  AConnection := TdxBackendDatabaseSQLConnection.Create(nil);
   try
-    ADashboard.Name := 'Country Sales';
-    ADashboard.Layout.LoadFromFile('CountrySalesDashboard.xml');
+    // Assign a database name matching the name specified in the dashboard layout
+    AConnection.DisplayName := 'NWindConnectionString';
+    // Assign a connection string required to use the local SQLite database
+    AConnection.ConnectionString := 'XpoProvider=SQLite; Data Source=nwind.db; Mode=ReadOnly';
 
-    // Step 2: Create a data connection manager and set up the database connection
-    AManager := TdxBackendDataConnectionManager.Create(nil);
+    // Step 2: Create a dashboard instance and load the dashboard layout
+    ADashboard := TdxDashboard.Create(nil);
     try
-      AConnection := TdxBackendDatabaseSQLConnection(AManager.DataConnections.Add(TdxBackendDatabaseSQLConnection));
+      ADashboard.Name := 'Country Sales';
+      ADashboard.Layout.LoadFromFile('CountrySalesDashboard.xml');
 
-      // Assign a database name matching the name specified in the dashboard layout
-      AConnection.DisplayName := 'NWindConnectionString';
-      // Assign a connection string required to use the local SQLite database
-      AConnection.ConnectionString := 'XpoProvider=SQLite; Data Source=nwind.db; Mode=ReadOnly';
-      AConnection.Active := True;
 
       // Step 3: Define Dashboard Parameter Values
       // Set the "CountryDashboardParameter" value in the dashboard layout
@@ -52,10 +50,10 @@ begin
         AStream.Free;
       end;
     finally
-      AManager.Free;
+      ADashboard.Free;
     end;
   finally
-    ADashboard.Free;
+    AConnection.Free;
   end;
 end;
 

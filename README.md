@@ -1,5 +1,5 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/1142556531/25.2.6%2B)
+![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/1142556531/26.1.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1323263)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
@@ -57,33 +57,7 @@ Follow the steps below to create an application that imports a dashboard layout 
 binds the layout to data, and exports the generated dashboard to a PDF file.
 
 
-### Step 1: Initialize a Dashboard and Import a Dashboard Layout
-
-An application requires a template dashboard layout previously created in the [Dashboard Designer][designer].
-You can [import a layout from a file][file-example] or [load a layout from a database][database-example].
-(Links refer to DevExpress VCL Reports examples that can be easily re-used with DevExpress Dashboards.)
-
-This example imports a dashboard layout from the [CountrySalesDashboard.xml] file.
-
-<!-- start-code-block -->
-#### Delphi
-
-```delphi
-ADashboard := TdxDashboard.Create(nil); // ADashboard: TdxDashboard;
-try
-    // Set an internal dashboard name (does not affect the exported content)
-    ADashboard.Name := 'Country Sales';
-    // Load the dashboard layout from the specified file
-    ADashboard.Layout.LoadFromFile('CountrySalesDashboard.xml');
-    // ...
-finally
-    ADashboard.Free;
-end;
-```
-<!-- end-code-block -->
-
-
-### Step 2: Create a Database Connection
+### Step 1: Create a Database Connection
 
 Create a database connection component to supply data to the dashboard.
 This example uses a SQLite sample database ([nwind.db]).
@@ -109,6 +83,31 @@ end;
 For detailed information on data source management and supported database engines, refer to the following help topic:
 [VCL Backend: Supported Database Systems][supported-dbms].
 
+
+### Step 2: Initialize a Dashboard and Import a Dashboard Layout
+
+An application requires a template dashboard layout previously created in the [Dashboard Designer][designer].
+You can [import a layout from a file][file-example] or [load a layout from a database][database-example].
+(Links refer to DevExpress VCL Reports examples that can be easily re-used with DevExpress Dashboards.)
+
+This example imports a dashboard layout from the [CountrySalesDashboard.xml] file.
+
+<!-- start-code-block -->
+#### Delphi
+
+```delphi
+ADashboard := TdxDashboard.Create(nil); // ADashboard: TdxDashboard;
+try
+    // Set an internal dashboard name (does not affect the exported content)
+    ADashboard.Name := 'Country Sales';
+    // Load the dashboard layout from the specified file
+    ADashboard.Layout.LoadFromFile('CountrySalesDashboard.xml');
+    // ...
+finally
+    ADashboard.Free;
+end;
+```
+<!-- end-code-block -->
 
 ### Step 3: Define Dashboard Parameter Values
 
